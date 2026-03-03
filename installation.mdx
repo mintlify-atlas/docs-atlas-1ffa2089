@@ -98,22 +98,24 @@ module.exports = {
 Create a simple test file to verify your installation:
 
 ```typescript
-import { OpenGeometry, Vector3 } from 'opengeometry';
+import { Cuboid, Vector3 } from 'opengeometry';
+import * as THREE from 'three';
 
-async function test() {
-  const og = await OpenGeometry.create({
-    wasmURL: '/path/to/opengeometry_bg.wasm' // optional in development
-  });
-  
-  console.log('OpenGeometry version:', OpenGeometry.version);
-  console.log('Vector3 test:', new Vector3(1, 2, 3));
-}
+// Create a simple test cuboid
+const cuboid = new Cuboid({
+  center: new Vector3(0, 0, 0),
+  width: 2,
+  height: 1,
+  depth: 1,
+  color: 0x4460ff
+});
 
-test();
+console.log('OpenGeometry cuboid created:', cuboid);
+console.log('OGID:', cuboid.ogid);
 ```
 
 <Note>
-  The `wasmURL` parameter is optional during development. For production deployments, specify the path where your bundler outputs the WASM file.
+  OpenGeometry uses WebAssembly which loads automatically. The shapes are ready to use immediately after import.
 </Note>
 
 ## Next Steps

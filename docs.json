@@ -69,7 +69,8 @@
               "api/shapes/cuboid",
               "api/shapes/sphere",
               "api/shapes/wedge",
-              "api/shapes/sweep"
+              "api/shapes/sweep",
+              "api/shapes/opening"
             ]
           },
           {

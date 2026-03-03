@@ -47,7 +47,7 @@ Create a `main.ts` file and set up a basic Three.js scene:
 ```typescript
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { OpenGeometry, Cuboid, Vector3 } from 'opengeometry';
+import { Cuboid, Vector3 } from 'opengeometry';
 
 // Get the app container
 const app = document.getElementById('app');
@@ -88,19 +88,6 @@ scene.add(ambientLight);
 const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
 directionalLight.position.set(5, 8, 3);
 scene.add(directionalLight);
-```
-
-</Step>
-
-<Step title="Initialize OpenGeometry">
-
-Initialize the OpenGeometry WASM module:
-
-```typescript
-// Initialize OpenGeometry
-await OpenGeometry.create({});
-
-console.log('OpenGeometry initialized, version:', OpenGeometry.version);
 ```
 
 </Step>
